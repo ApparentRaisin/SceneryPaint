@@ -7,20 +7,20 @@ Scenery Paint allows you to import any model, attach a collider and material and
 The goal of this system was to speed up and make collaboration on my game A Town called Paint by enabling artists and other devs to not have to worry about baking special textures or making sure texture scales are correct. By handling all parts at run time I can use any assets, and people I work with do not need to worry or remember to follow any extra steps when testing or building assets as all the uv generation and other systems are handled by the engine or my code.
 
 ### How to use it
-1.Import a model into unity - int the import settings make sure to select generate lightmap uv, and rescale the object to Unity's expected scale. (If importing from Blender this generally means setting the import scale to 100)
-2.Attach a material that uses the Unlit Paint shader
-3.Attach a collider
-4.Play and Paint!
+1. Import a model into unity - int the import settings make sure to select generate lightmap uv, and rescale the object to Unity's expected scale. (If importing from Blender this generally means setting the import scale to 100)
+2. Attach a material that uses the Unlit Paint shader
+3. Attach a collider
+4. Play and Paint!
 
 ### How it works
 Scenery Paint uses a series of custom shaders, and camera to generate a realtime screen space texture mapped to each object being painted that can then be used in a Graphics.Blit function with the drawing shader to draw on each object.
 
 Each time an object is drawn on the steps are as follows:
-1.Check if object is rendered
-_Add cacheing script if not already there
-_Render object as uv2 coords with screen space coords as color in RG channels, Depth comparision in B on 2nd Camera
-_Blit screenspace texture with cached texture used by base material
-_Clear screenspace Texture
+1. Check if object is rendered
+2. Add cacheing script if not already there
+3. Render object as uv2 coords with screen space coords as color in RG channels, Depth comparision in B on 2nd Camera
+4. Blit screenspace texture with cached texture used by base material
+5. Clear screenspace Texture
 
 
 Shield: [![CC BY-NC 4.0][cc-by-nc-shield]][cc-by-nc]
