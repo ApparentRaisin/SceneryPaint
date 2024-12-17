@@ -1,11 +1,12 @@
 ## Scenery Painting : A Town called Paint
 A realtime perspective based painting system. Designed for easy of use and implimentation into an ongoing project.
-
+[a collection of houses have have been painted on, with the tex "A Town Called Paint" written on them](images/Unity_aZwcy4QbQy.jpg)
 ### What does it do and why?
 Scenery Paint allows you to import any model, attach a collider and material and then "paint" on it in real time. Models do not need to be prepped outside of specific umity import settings, no textures or data needs to be generated ahead of playing the game. The system is designed to require minimal input from non-technical users and instead.
 
 The goal of this system was to speed up and make collaboration on my game A Town called Paint by enabling artists and other devs to not have to worry about baking special textures or making sure texture scales are correct. By handling all parts at run time I can use any assets, and people I work with do not need to worry or remember to follow any extra steps when testing or building assets as all the uv generation and other systems are handled by the engine or my code.
-
+[a set of colored in houses](images/Unity_QaNjNHdPv4.png)
+[the prvious houses from a different angle showing how they are oly correctly coloured when viewed from the right angle](images/Unity_uNMymAwauy.png)
 ### How to use it
 1. Add the Paint Camera prefab to your scene
 2. Import a model into unity - in the import settings make sure to select generate lightmap uv, and rescale the object to Unity's expected scale. (If importing from Blender this generally means setting the import scale to 100)
@@ -13,7 +14,7 @@ The goal of this system was to speed up and make collaboration on my game A Town
 4. Attach a collider
 5. Play and Paint!
 
-##Optional
+####Optional
 The outline effect can be added by attaching the outline replacement script to any camera
 
 ### How it works
