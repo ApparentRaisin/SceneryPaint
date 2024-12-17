@@ -17,6 +17,12 @@ public class OutlineReplacement : MonoBehaviour
         cam = this.GetComponent<Camera>();
         normalsReplacement = Shader.Find("Unlit/NormalsReplacement");
         cam.depthTextureMode = DepthTextureMode.Depth;
+        if(cameraNormals == null){
+            cameraNormals = new GameObject("Normals Camera", typeof(Camera)).GetComponent<Camera>();
+            cameraNormals.transform.parent = this.transform;
+            cameraNormals.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
+            cameraNormals.enabled = false;
+        }        
         cameraNormals.SetReplacementShader(normalsReplacement, "RenderType");
         
     }

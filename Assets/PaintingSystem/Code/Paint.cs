@@ -28,6 +28,7 @@ public class Paint : MonoBehaviour
         drawMat = new Material(Shader.Find("Hidden/Draw"));
         growMat = new Material(Shader.Find("Hidden/Grow"));
         screenSpaceMat = new Material(Shader.Find("Unlit/ScreenSpace"));
+        thisCamera.depthTextureMode = DepthTextureMode.Depth;
 
         //setup screen pos texture and camera
         screenSpaceTexture = new RenderTexture(2048, 2048, 16);
@@ -40,7 +41,16 @@ public class Paint : MonoBehaviour
         //Cannot use a temporary texture for margin grow texture because of resolution issues
         growScreen = new RenderTexture(2048, 2048, 16);
         growScreen.format = RenderTextureFormat.ARGB64;
-        
+
+        //Make sure all object collection scripts are attached
+        if(this.GetComponent<FrustrumCollect>() == null){
+            MeshCollider m = this.AddComponent<MeshCollider>();
+            m.convex = true;
+            m.isTrigger = true;
+            Rigidbody r = this.AddComponent<Rigidbody>();
+            r.isKinematic = true;
+            this.AddComponent<FrustrumCollect>();
+        }
     }
 
     public static void SetPaintColor(Color color){

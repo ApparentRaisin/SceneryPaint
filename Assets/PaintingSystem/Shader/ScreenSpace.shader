@@ -62,11 +62,10 @@ Shader "Unlit/ScreenSpace"
                 // collect the screen position and depth
                 float2 screenPos = i.screenPos.xy/i.screenPos.w;
                 float depth = LinearEyeDepth(tex2D(_CameraDepthTexture,screenPos).r);
-                depth +=  LinearEyeDepth(tex2D(_CameraDepthTexture,screenPos + float2(1,0) * _CameraDepthTexture_TexelSize.xy * 0.5).r);
-                depth +=  LinearEyeDepth(tex2D(_CameraDepthTexture,screenPos + float2(-1,0) * _CameraDepthTexture_TexelSize.xy * 0.5).r);
-                depth +=  LinearEyeDepth(tex2D(_CameraDepthTexture,screenPos + float2(0,1) * _CameraDepthTexture_TexelSize.xy * 0.5).r);
-                depth +=  LinearEyeDepth(tex2D(_CameraDepthTexture,screenPos + float2(0,-1) * _CameraDepthTexture_TexelSize.xy * 0.5).r);
-                depth /= 5.;
+                depth = max(depth,LinearEyeDepth(tex2D(_CameraDepthTexture,screenPos + float2(1,0) * _CameraDepthTexture_TexelSize.xy * 1.5).r));
+                depth = max(depth,LinearEyeDepth(tex2D(_CameraDepthTexture,screenPos + float2(-1,0) * _CameraDepthTexture_TexelSize.xy * 1.5).r));
+                depth = max(depth,LinearEyeDepth(tex2D(_CameraDepthTexture,screenPos + float2(0,1) * _CameraDepthTexture_TexelSize.xy * 1.5).r));
+                depth = max(depth,LinearEyeDepth(tex2D(_CameraDepthTexture,screenPos + float2(0,-1) * _CameraDepthTexture_TexelSize.xy * 1.5).r));
                 
                 //return 0 blue value when behind other objects OR outside of 0-1 screen range
                 fixed4 col = float4(screenPos,(((depth) - i.screenPos.w) > -0.5) * (i.screenPos.w>0.3) * (screenPos.x > 0) * (screenPos.x < 1) * (screenPos.y > 0) * (screenPos.y < 1),1);
