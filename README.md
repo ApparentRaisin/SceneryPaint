@@ -1,5 +1,5 @@
 ## Scenery Painting : A Town called Paint
-A realtime perspective based painting system. Designed for easy of use and implimentation into an ongoing project.
+A realtime perspective based painting system. Designed for ease of use and implimentation into an ongoing project.
 ![a collection of houses have have been painted on, with the tex "A Town Called Paint" written on them](https://github.com/ApparentRaisin/SceneryPaint/blob/main/images/Unity_aZwcy4QbQy.jpg?raw=true)
 ### What does it do and why?
 Scenery Paint allows you to import any model, attach a collider and material and then "paint" on it in real time. Models do not need to be prepped outside of specific umity import settings, no textures or data needs to be generated ahead of playing the game. The system is designed to require minimal input from non-technical users and instead.
@@ -14,7 +14,7 @@ The goal of this system was to speed up and make collaboration on my game A Town
 4. Attach a collider
 5. Play and Paint!
 
-####Optional
+#### Optional
 The outline effect can be added by attaching the outline replacement script to any camera
 
 ### How it works
@@ -28,12 +28,12 @@ Each time an object is drawn on the steps are as follows:
 5. Clear screenspace Textureaaaaaaaaaaaaaa
 
 ### To Do
--Optimization
-  -occlusion of objects by AABB
-  -Draw shader optimization (reduce tex2D calls)
--Visuals
-  -imporve screen uv edges
-  -imporve edgde detection for outline
+_ Optimization
+  _ occlusion of objects by AABB
+  _ Draw shader optimization (reduce tex2D calls)
+_ Visuals
+  _ imporve screen uv edges
+  _ imporve edgde detection for outline
 
 [![CC BY-NC 4.0][cc-by-nc-shield]][cc-by-nc]
 
