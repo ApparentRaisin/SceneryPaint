@@ -18,7 +18,7 @@ public class Paint : MonoBehaviour
     Collider[] colliders;
     public static Color paintColor;
     public static Texture2D paintTex;
-
+    
     
     void Start()
     {
@@ -150,8 +150,8 @@ public class Paint : MonoBehaviour
         RenderTexture.ReleaseTemporary(t);
 
         //Clear Color
-        Graphics.Blit(Texture2D.blackTexture, screenSpaceTexture);
-        Graphics.Blit(Texture2D.blackTexture, growScreen);
+        //Graphics.Blit(Texture2D.blackTexture, screenSpaceTexture);
+        //Graphics.Blit(Texture2D.blackTexture, growScreen);
         
     }
 }

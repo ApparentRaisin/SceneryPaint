@@ -53,10 +53,10 @@ Shader "Hidden/OutlineReplacement"
                 fixed4 col = tex2D(_MainTex, i.uv);
                 
                 //Sample Normals and depth texture                
-                float4 nUp = tex2D(_NormalsTex, i.uv + float2(1,1) *_MainTex_TexelSize.xy * 1.0);
-                float4 nDown = tex2D(_NormalsTex, i.uv + float2(-1,-1) *_MainTex_TexelSize.xy * 1.0);
-                float4 nLeft = tex2D(_NormalsTex, i.uv + float2(1,-1) *_MainTex_TexelSize.xy * 1.0);
-                float4 nRight = tex2D(_NormalsTex, i.uv + float2(-1,1) *_MainTex_TexelSize.xy * 1.0);
+                float4 nUp = tex2D(_NormalsTex, i.uv + float2(1,1) *_MainTex_TexelSize.xy * 1.5);
+                float4 nDown = tex2D(_NormalsTex, i.uv + float2(-1,-1) *_MainTex_TexelSize.xy * 1.5);
+                float4 nLeft = tex2D(_NormalsTex, i.uv + float2(1,-1) *_MainTex_TexelSize.xy * 1.5);
+                float4 nRight = tex2D(_NormalsTex, i.uv + float2(-1,1) *_MainTex_TexelSize.xy * 1.5);
 
                 //calculate grazing angle threshold for depth
                 float NdotV = (dot(nUp.xyz*2-1, -i.viewDir)) ;
