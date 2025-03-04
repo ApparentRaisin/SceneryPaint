@@ -25,7 +25,7 @@ Each time an object is drawn on the steps are as follows:
 2. Add cacheing script if not already there
 3. Render object as uv2 coords with screen space coords as color in RG channels, Depth comparision in B on 2nd Camera
 4. Blit screenspace texture with cached texture used by base material
-5. Clear screenspace Textureaaaaaaaaaaaaaa
+5. Clear screenspace Texture
 
 ### To Do
 _ Optimization
